@@ -137,10 +137,9 @@
                     return;
                 }
                 const matiereObjet = newMatiere(titleMatiere);
-                const matiere = createMatiere(matiereObjet);
-                matiereCardContainer.appendChild(matiere);
                 matieres.push(matiereObjet);
                 saveMatiere(matieres);
+                loadMatiere();
                 cardTitleInput.value = '';
             } else {
                 modaleMessage('Veuillez entrer un titre pour la matière.');
@@ -174,8 +173,19 @@
             matieres.push(...savedMatieres);
 
             matiereCardContainer.textContent = '';
+
+            if (matieres.length === 0) {
+                const emptyMessage = document.createElement('p');
+                emptyMessage.className = 'paragraph';
+                matiereCardContainer.classList.remove('active');
+                emptyMessage.textContent = 'Aucune matière disponible. Ajoutez une nouvelle matière pour commencer.';
+                matiereCardContainer.appendChild(emptyMessage);
+                return;
+            }
+
             matieres.forEach(cardData => {
                 const card = createMatiere(cardData);
+                matiereCardContainer.classList.add('active');
                 matiereCardContainer.appendChild(card);
             });
         }
