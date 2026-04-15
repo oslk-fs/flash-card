@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Flash Cards</h1>
+        <di class="controls">
+            <div class="add-card">
+                <input type="text" placeholder="Matière" id="cardTitle" maxlength="20">
+                <button id="btnAdd">Ajouter</button>
+            </div>
+            <div class="search">
+                <input type="text" placeholder="Rechercher une matière" id="searchInput">
+                <button id="btnSearch"><img src="assets/search.svg" alt="Rechercher"></button>
+            </div>
+        </div>
+    </header>
+    <main class="container-flash-card"></main>
+    <div class="modal-helper">
+        <button id="helper" title="Aide">?</button>
+        <div class="aide">
+            <h2>Aide</h2>
+            <ul>
+                <li>Pour ajouter une matière, entrez le nom de la matière dans le champ de texte et cliquez sur
+                    "Ajouter" ou appuyez sur la touche "Entrée".</li>
+                <li>Pour ajouter une flash card à une matière, cliquez sur le bouton " +" à côté du titre de la matière,
+                    puis cliquez sur "Ajouter une flash card".</li>
+                <li>Pour supprimer une matière, cliquez sur le bouton "X" dans le coin supérieur droit de la carte de la
+                    matière, puis confirmez la suppression.</li>
+                <li>Pour modifier le titre d'une matière, cliquez sur le titre et entrez le nouveau nom.</li>
+                <li>Pour rechercher une matière, utilisez le champ de recherche.</li>
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="modal.js"></script>
+</body>
+
+</html>
